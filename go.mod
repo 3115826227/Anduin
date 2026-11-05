@@ -1,3 +1,3 @@
 module github.com/3115826227/Anduin
 
-go 1.23.0
+go 1.16
