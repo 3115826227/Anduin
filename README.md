@@ -1,6 +1,6 @@
-# Anduin — 企业综合管理平台后端
+# 安度因（Anduin）— 企业综合管理平台后端
 
-Anduin 是企业综合管理平台的后端服务，负责业务处理、数据访问及服务端基础能力。项目当前处于基础工程初始化阶段，尚未提供业务 API。
+安度因（Anduin）是企业综合管理平台的后端服务，负责业务处理、数据访问及服务端基础能力。项目当前处于基础工程初始化阶段，尚未提供业务 API。
 
 ## 技术栈
 
@@ -37,8 +37,8 @@ go build ./...
 
 ## 仓库与协作
 
-- 前端：[Garona](https://github.com/3115826227/Garona)
-- 文档：[Illidan](https://github.com/3115826227/Illidan)
+- 前端：[迦罗娜（Garona）](https://github.com/3115826227/Garona)
+- 文档：[伊利丹（Illidan）](https://github.com/3115826227/Illidan)
 - `master`：生产稳定分支；`develop`：开发主线
 - `feature_<description>_<YYYYMMDD>`：需求开发；`hotfix_<description>_<YYYYMMDD>`：紧急修复
 - 功能从 `develop` 拉分支，通过 Pull Request 合并回 `develop`。
