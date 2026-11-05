@@ -1,38 +1,49 @@
-# Anduin
+# Anduin — 企业综合管理平台后端
 
-Anduin is an enterprise management system built with Go.
+Anduin 是企业综合管理平台的后端服务，负责业务处理、数据访问及服务端基础能力。项目当前处于基础工程初始化阶段，尚未提供业务 API。
 
-## Development baseline
+## 技术栈
 
-- Go 1.16 (legacy development baseline)
-- Gin, GORM, Viper, Uber Zap
-- MySQL 8 (optional; disabled by default)
+- Go 1.16（当前开发环境基线；已停止安全维护，生产环境建议升级）
+- Gin — HTTP Web 框架
+- GORM + MySQL — 数据访问
+- Viper — YAML 配置及环境变量
+- Uber Zap — 结构化日志
 
-## Run
+## 快速开始
 
 ```bash
+git clone https://github.com/3115826227/Anduin.git
+cd Anduin
+git switch feature_init_project_20261105
 go mod tidy
 go run .
 ```
 
-The server starts on port 8080. No business API routes are registered yet, so requests to unimplemented paths return 404.
+默认监听 `8080` 端口；数据库连接默认关闭，无需先启动 MySQL。尚未注册业务路由，访问未实现路径会返回 404。
 
-## Configuration
+配置位于 `configs/config.yaml`，可使用 `ANDUIN_` 前缀的环境变量覆盖，例如 `ANDUIN_SERVER_PORT=9090`。环境变量示例参见 `.env.example`，程序不会自动加载 `.env`。
 
-Default values are in `configs/config.yaml`. Viper supports environment variable overrides with the `ANDUIN_` prefix, for example `ANDUIN_SERVER_PORT=9090`.
-
-To connect MySQL, set `ANDUIN_DATABASE_ENABLED=true` and `ANDUIN_DATABASE_DSN` (see `.env.example`). Environment variables must be exported by the shell or process manager; the application does not automatically load `.env`.
-
-## Development
+## 开发与验证
 
 ```bash
-go mod tidy
-make fmt
-make vet
-make test
-make build
+go fmt ./...
+go vet ./...
+go test ./...
+go build ./...
 ```
 
-No business APIs, schema migrations, or authentication are implemented yet.
+当前依赖需要在 Go 1.16 环境下验证兼容性；请以 CI 检查结果为准。
 
-> Go 1.16 is end-of-life. Upgrade to a supported Go version before production deployment.
+## 仓库与协作
+
+- 前端：[Garona](https://github.com/3115826227/Garona)
+- 文档：[Illidan](https://github.com/3115826227/Illidan)
+- `master`：生产稳定分支；`develop`：开发主线
+- `feature_<description>_<YYYYMMDD>`：需求开发；`hotfix_<description>_<YYYYMMDD>`：紧急修复
+- 功能从 `develop` 拉分支，通过 Pull Request 合并回 `develop`。
+- Commit 和 PR 标题使用中英文双语，例如：`docs(readme): add project overview | 补充项目介绍`。
+
+## 当前状态
+
+基础工程建设中，尚未实现业务模块、身份认证及数据库迁移。
