@@ -1,0 +1,20 @@
+# 默认文本文件使用 LF
+* text=auto
+
+# Go 源码
+*.go text eol=lf
+*.mod text eol=lf
+*.sum text eol=lf
+
+# 配置文件
+*.yaml text eol=lf
+*.yml text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+
+# Shell 脚本
+*.sh text eol=lf
+
+# Windows 脚本
+*.bat text eol=crlf
+*.cmd text eol=crlf
